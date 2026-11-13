@@ -1,0 +1,63 @@
+.cta-band-wrapper {
+  max-width: unset;
+  background: var(--accent-color, #d50f27);
+}
+
+.cta-band {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  color: var(--background-color);
+}
+
+.cta-band > div:only-child {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.cta-band h2,
+.cta-band h3 {
+  margin: 0 0 0.5rem;
+  color: inherit;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.cta-band p {
+  margin: 0 0 1rem;
+  opacity: 0.9;
+}
+
+.cta-band .button.primary {
+  background: var(--background-color);
+  color: var(--accent-color, #d50f27);
+  border-color: var(--background-color);
+}
+
+.cta-band .button.primary:hover {
+  background: transparent;
+  color: var(--background-color);
+}
+
+.cta-band picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-band picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+@media (width < 768px) {
+  .cta-band {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

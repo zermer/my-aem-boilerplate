@@ -11,17 +11,22 @@
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* James Hardie brand colors */
+  --background-color: #fff;
+  --light-color: #f5f5f5;
+  --dark-color: #1a1a1a;
+  --text-color: #222;
+  --text-color-light: #666;
+  --accent-color: #d50f27;         /* JH Red */
+  --accent-hover-color: #a80c1f;
+  --link-color: #d50f27;
+  --link-hover-color: #a80c1f;
+  --nav-background: #fff;
+  --nav-border-color: #e5e5e5;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* fonts — JH uses Montserrat (headings) + Open Sans (body) */
+  --body-font-family: "Open Sans", open-sans-fallback, sans-serif;
+  --heading-font-family: Montserrat, montserrat-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;

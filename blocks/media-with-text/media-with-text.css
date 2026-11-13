@@ -1,0 +1,43 @@
+.media-with-text > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 24px;
+}
+
+.media-with-text > div > div:first-child picture,
+.media-with-text > div > div:first-child img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.media-with-text > div > div:last-child {
+  padding: 1rem 0;
+}
+
+.media-with-text h2,
+.media-with-text h3 {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.media-with-text [class*="stat"] {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color, #d50f27);
+  display: block;
+  margin: 0.5rem 0;
+}
+
+@media (width < 768px) {
+  .media-with-text > div {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 24px;
+  }
+}

@@ -1,0 +1,16 @@
+.footnotes-wrapper {
+  background: var(--light-color, #f8f8f8);
+}
+
+.footnotes {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 24px;
+  font-size: 0.75rem;
+  color: var(--text-color-light, #666);
+  line-height: 1.6;
+}
+
+.footnotes p {
+  margin: 0 0 0.5rem;
+}
