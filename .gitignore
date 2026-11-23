@@ -11,3 +11,6 @@ helix-importer-ui
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
+tools/importer/output/
+tools/importer/output-full/
+tools/importer/output-blocks/
