@@ -19,6 +19,8 @@
   --text-color-light: #666;
   --accent-color: #d50f27;         /* JH Red */
   --accent-hover-color: #a80c1f;
+  --green-color: #00833e;          /* JH Green — arrow icons, inline links */
+  --green-hover-color: #006630;
   --link-color: #d50f27;
   --link-hover-color: #a80c1f;
   --nav-background: #fff;
@@ -26,7 +28,7 @@
 
   /* fonts — JH uses Montserrat (headings) + Open Sans (body) */
   --body-font-family: "Open Sans", open-sans-fallback, sans-serif;
-  --heading-font-family: Montserrat, montserrat-fallback, sans-serif;
+  --heading-font-family: "Montserrat", montserrat-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -45,18 +47,6 @@
   --nav-height: 64px;
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
 
 @media (width >= 900px) {
   :root {
