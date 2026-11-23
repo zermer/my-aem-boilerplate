@@ -326,6 +326,15 @@ function transformMain(doc, originalMain) {
     newMain.append(child.cloneNode(true));
   }
 
+  // Wrap every <table> that is a direct child of <main> in a <div>.
+  // The AEM HTML→Markdown pipeline requires this to preserve block tables
+  // (direct <table> children are silently dropped during HTML→Markdown conversion).
+  [...newMain.querySelectorAll(':scope > table')].forEach((table) => {
+    const wrapper = doc.createElement('div');
+    newMain.insertBefore(wrapper, table);
+    wrapper.append(table);
+  });
+
   return newMain;
 }
 

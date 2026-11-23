@@ -1,0 +1,78 @@
+{
+  "total": 14,
+  "offset": 0,
+  "limit": 14,
+  "data": [
+    {
+      "path": "/product-catalog/accessories-siding-products/hardie-colorplus-touch-up-kits",
+      "title": "ColorPlus® Technology Touch-Up Kits",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/158cDUksZP4o3lWCXOUFSn/39d96963ba921dd98fa55cddd907a2e7/pdp-hero-using-hardie-colorplus-touch-up-kit.jpg"
+    },
+    {
+      "path": "/product-catalog/backer-board-products/hardie-backer-cement-board",
+      "title": "Hardie® Backer Board",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/3RfTQtYxVKktFFck7VE6MC/b1df57613485bbbfa1b553030c9a651d/pdp-hero-hardie-backer-board.jpg"
+    },
+    {
+      "path": "/product-catalog/exterior-siding-products/hardie-architectural-panel-siding",
+      "title": "Hardie Architectural Panel Siding",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/4b43vUbPYcEFzlHo60nWI9/5560afa97b7d8f501edb882b2ae07dbc/RS23564_RS23560_JH_4562_Niagara_Ave_SanDiego_Final_56_RETOUCHED__1_.jpg"
+    },
+    {
+      "path": "/product-catalog/exterior-siding-products/hardie-artisan-siding",
+      "title": "Hardie Artisan Siding",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/ZDPuEgi2xOQPXnoasj83G/2ae130588ae85201d00c79b5ac92fc31/detail-hardie-artisan-vgroove-siding-white.jpg"
+    },
+    {
+      "path": "/product-catalog/exterior-siding-products/hardie-panel-siding",
+      "title": "Hardie Panel Siding",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/7n6DlOOYVqACbYLuZNLqxk/d26e77f8df971b8ed5e8d82662d0c082/Panel_Monterey_Taupe.jpg"
+    },
+    {
+      "path": "/product-catalog/exterior-siding-products/hardie-plank-lap-siding",
+      "title": "Hardie Plank Lap Siding",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/6NXuKLWjKIUy3hcw8je6k0/b0b84a79ec8913fdd3f82fe9f7b60100/RS26489_JamesHardie_Shot05_022-scr.jpg"
+    },
+    {
+      "path": "/product-catalog/exterior-siding-products/hardie-shingle-siding",
+      "title": "Hardie Shingle Siding",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/3TG3VbtvMFE5PLEU6GXW06/cd24dd75de4fc30328c9cfc1ec4b52be/countrylanered_shingle.jpg"
+    },
+    {
+      "path": "/product-catalog/moisture-management-products/weather-barrier-products",
+      "title": "Hardie™ Weather Barrier Products",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/5d0eEXlnevwnD5Zt6eANii/99d78736e0c68212ffc9ace2491e0ad3/hardie-weather-barrier.jpg"
+    },
+    {
+      "path": "/product-catalog/soffit-products/hardie-soffit-and-panel",
+      "title": "Hardie Soffit And Panel",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/50EcnoyWNj285lblvZrRwo/4ad85ea303ec42d9d0d053db42894baa/soffit_and_panel.jpg"
+    },
+    {
+      "path": "/product-catalog/soffit-products/hardie-soffit-panels",
+      "title": "Hardie Soffit Panels",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/mKm0AfUXauM6ZaS1EIUG9/e01181eb6721d3369481738cda9652eb/detail-hardie-soffit-panel-arctic-white-hardie-plank-deep-ocean.jpg"
+    },
+    {
+      "path": "/product-catalog/trim-products/hardie-architectural-trim",
+      "title": "Hardie™ Architectural Trim",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/5F257D8jSRVjke9gf2qFec/e2b864708fa1ee0a0ce7622a6435f3d2/RS23565_JH-4562_Niagara_Ave-SanDiego-Final-63.jpg"
+    },
+    {
+      "path": "/product-catalog/trim-products/hardie-artisan-trim",
+      "title": "Hardie Artisan Trim",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/50ant9stTfRiFLrtkwVust/c27ca1a67492b9f081b1a769740f79fd/RS16354_Norton_JH_MenloPark_STILLS_017_RT-scr.jpg"
+    },
+    {
+      "path": "/product-catalog/trim-products/hardie-trim-batten-boards",
+      "title": "Hardie Trim Batten Boards",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/320GJgmBcDrqlxNSYLGeR3/cca1b9095adee18330ecf77203312087/detail-hardie-plank-hardie-batten-white.jpg"
+    },
+    {
+      "path": "/product-catalog/trim-products/hardie-trim-boards",
+      "title": "Hardie Trim Boards",
+      "image": "https://images.ctfassets.net/dzi2asncd44t/1CMTtpxYi1Nw2fjR9d1uZ0/1faa2746cec9f4eab8c7986932b11d7f/window-hardie-plank-gray-shadow-hardie-trim-arctic-white.jpg"
+    }
+  ],
+  ":type": "sheet"
+}
