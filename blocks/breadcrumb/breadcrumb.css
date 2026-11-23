@@ -1,5 +1,5 @@
 .breadcrumb {
-  padding: 0.75rem 24px;
+  padding: 12px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -10,32 +10,39 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  font-size: 0.875rem;
-  color: var(--text-color-light, #666);
+  align-items: center;
+  gap: 0;
+  font-size: 0.8125rem;
+  color: #666;
 }
 
-.breadcrumb li::after {
+.breadcrumb ol li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb ol li[data-sep]::after {
   content: attr(data-sep);
-  margin-left: 0.25rem;
-  color: var(--text-color-light, #aaa);
+  margin: 0 6px;
+  color: #aaa;
+  font-size: 0.75rem;
 }
 
-.breadcrumb li:last-child::after {
-  content: '';
+.breadcrumb ol li:last-child::after {
+  display: none;
 }
 
 .breadcrumb a {
-  color: inherit;
+  color: #666;
   text-decoration: none;
 }
 
 .breadcrumb a:hover {
+  color: var(--accent-color);
   text-decoration: underline;
-  color: var(--accent-color, #d50f27);
 }
 
-.breadcrumb li[aria-current="page"] {
-  color: var(--text-color);
-  font-weight: 500;
+.breadcrumb li[aria-current='page'] {
+  color: var(--dark-color);
+  font-weight: 600;
 }
