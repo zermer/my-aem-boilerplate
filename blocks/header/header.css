@@ -29,11 +29,26 @@ header nav[aria-expanded='true'] {
   min-height: 100dvh;
 }
 
-/* utility bar hidden on mobile */
+/* utility bar: hidden on mobile */
 header nav .nav-tools {
   display: none;
 }
 
+/* sections: hidden on mobile until hamburger is opened */
+header nav .nav-sections {
+  grid-area: sections;
+  flex: 1 1 auto;
+  display: none;
+  visibility: hidden;
+}
+
+header nav[aria-expanded='true'] .nav-sections {
+  display: block;
+  visibility: visible;
+  align-self: start;
+}
+
+/* ── Desktop ≥900px ────────────────────────────────────────────────────── */
 @media (width >= 900px) {
   header .nav-wrapper {
     position: sticky;
@@ -55,10 +70,16 @@ header nav .nav-tools {
     align-items: stretch;
   }
 
+  header nav .nav-hamburger {
+    display: none;
+    visibility: hidden;
+  }
+
   /* utility bar row */
   header nav .nav-tools {
     grid-area: tools;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     gap: 12px;
@@ -81,6 +102,7 @@ header nav .nav-tools {
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
+    white-space: nowrap;
     transition: background-color 0.15s, color 0.15s;
   }
 
@@ -89,6 +111,7 @@ header nav .nav-tools {
     color: var(--background-color);
   }
 
+  /* brand row cell */
   header nav .nav-brand {
     grid-area: brand;
     display: flex;
@@ -96,6 +119,7 @@ header nav .nav-tools {
     flex-basis: auto;
   }
 
+  /* sections row cell: visible on desktop */
   header nav .nav-sections {
     grid-area: sections;
     display: flex;
@@ -103,8 +127,55 @@ header nav .nav-tools {
     visibility: visible;
     white-space: nowrap;
   }
+
+  header nav .nav-sections ul {
+    display: flex;
+    gap: 32px;
+    margin: 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li {
+    flex: 0 1 auto;
+    position: relative;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+    display: none;
+  }
+
+  /* dropdown shown on click (aria-expanded) or hover */
+  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul,
+  header nav .nav-sections .default-content-wrapper > ul > li.nav-drop:hover > ul {
+    display: block;
+    position: absolute;
+    left: -24px;
+    width: 220px;
+    top: 150%;
+    padding: 16px;
+    background-color: var(--light-color);
+    white-space: initial;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--light-color);
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+    padding: 8px 0;
+  }
 }
 
+/* ── Shared styles ─────────────────────────────────────────────────────── */
 header nav p {
   margin: 0;
   line-height: 1;
@@ -188,13 +259,6 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
 /* brand */
 header .nav-brand {
   grid-area: brand;
@@ -209,31 +273,7 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
-}
-
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
-}
-
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
-}
-
-header nav .nav-sections ul > li {
-  font-weight: 500;
-}
-
-/* nav-drop label kept as a navigable link outside the toggle button */
+/* nav-drop label as a navigable link outside the toggle button */
 header nav .nav-sections .nav-drop > p {
   display: inline;
   margin: 0;
@@ -282,6 +322,16 @@ header nav .nav-sections .nav-drop > button:focus-visible {
   outline-offset: 2px;
 }
 
+header nav .nav-sections ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: var(--body-font-size-s);
+}
+
+header nav .nav-sections ul > li {
+  font-weight: 500;
+}
+
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
 }
@@ -292,58 +342,4 @@ header nav .nav-sections ul > li > ul > li {
 
 header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
   display: none;
-}
-
-@media (width >= 900px) {
-  header nav .nav-sections ul {
-    display: flex;
-    gap: 32px;
-    margin: 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
-  }
-
-  /* dropdown shown on click (via aria-expanded) or hover */
-  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul,
-  header nav .nav-sections .default-content-wrapper > ul > li.nav-drop:hover > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 220px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-}
-
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
 }
