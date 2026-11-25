@@ -2,8 +2,9 @@
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
-  z-index: 2;
+  z-index: 100;
   position: fixed;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
 }
 
 header nav {
@@ -172,6 +173,23 @@ header nav .nav-sections ul > li {
   font-weight: 500;
 }
 
+/* nav-drop label kept as a navigable link outside the toggle button */
+header nav .nav-sections .nav-drop > p {
+  display: inline;
+  margin: 0;
+  font-weight: 500;
+  font-size: var(--body-font-size-s);
+}
+
+header nav .nav-sections .nav-drop > p > a:any-link {
+  color: currentcolor;
+  text-decoration: none;
+}
+
+header nav .nav-sections .nav-drop > p > a:hover {
+  text-decoration: underline;
+}
+
 header nav .nav-sections .nav-drop > button {
   all: unset;
   display: inline-block;
@@ -239,15 +257,19 @@ header nav .nav-sections .nav-drop > button[aria-expanded='false'] + ul {
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul {
+  /* dropdown shown on click (via aria-expanded) or hover */
+  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul,
+  header nav .nav-sections .default-content-wrapper > ul > li.nav-drop:hover > ul {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
+    width: 220px;
     top: 150%;
     padding: 16px;
     background-color: var(--light-color);
     white-space: initial;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {

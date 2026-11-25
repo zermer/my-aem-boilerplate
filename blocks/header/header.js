@@ -121,14 +121,23 @@ export default async function decorate(block) {
       const subList = navSection.querySelector(':scope > ul');
       if (!subList) return;
       navSection.classList.add('nav-drop');
-      // wrap the dropdown label in a button so it is announced as expandable
       const button = document.createElement('button');
       button.type = 'button';
       button.setAttribute('aria-expanded', false);
-      [...navSection.childNodes].forEach((node) => {
-        if (node !== subList) button.append(node);
-      });
-      navSection.prepend(button);
+
+      // If the section label is a <p> containing a link, keep it outside the button
+      // so the link is clickable for navigation while the button is the expand toggle
+      const labelPara = [...navSection.children].find((el) => el.tagName === 'P' && el.querySelector('a'));
+      if (labelPara) {
+        labelPara.remove();
+        navSection.prepend(button);
+        button.before(labelPara);
+      } else {
+        [...navSection.childNodes].forEach((node) => {
+          if (node !== subList) button.append(node);
+        });
+        navSection.prepend(button);
+      }
       button.addEventListener('click', () => {
         const expanded = button.getAttribute('aria-expanded') === 'true';
         if (isDesktop.matches) {
