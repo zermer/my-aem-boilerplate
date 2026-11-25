@@ -45,6 +45,8 @@
 
   /* nav height */
   --nav-height: 64px;
+  /* utility bar height (desktop only; 0 on mobile) */
+  --utility-bar-height: 0px;
 }
 
 
@@ -62,6 +64,9 @@
     --heading-font-size-m: 22px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
+
+    /* desktop utility bar pushes header taller */
+    --utility-bar-height: 44px;
   }
 }
 
@@ -80,7 +85,7 @@ body.appear {
 }
 
 header {
-  height: var(--nav-height);
+  height: calc(var(--nav-height) + var(--utility-bar-height));
 }
 
 header .header,
@@ -194,8 +199,8 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--background-color);
 }
 
@@ -203,9 +208,9 @@ a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--accent-hover-color);
+  background-color: var(--accent-hover-color);
+  color: var(--background-color);
 }
 
 a.button.primary[aria-disabled="true"],
