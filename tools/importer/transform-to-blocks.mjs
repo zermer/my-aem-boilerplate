@@ -172,7 +172,18 @@ function transformMain(doc, originalMain) {
   for (const child of [...originalMain.children]) {
     // Keep existing block tables (metadata etc.) as-is
     if (child.tagName === 'TABLE') {
-      newMain.append(child.cloneNode(true));
+      const tbl = child.cloneNode(true);
+      // Fix product titles that ended up as "Name - " due to missing subtitle
+      const isMetadata = tbl.querySelector('th')?.textContent?.trim().toLowerCase() === 'metadata';
+      if (isMetadata) {
+        tbl.querySelectorAll('tr').forEach((row) => {
+          const [keyTd, valTd] = [...row.querySelectorAll('td')];
+          if (keyTd?.textContent?.trim().toLowerCase() === 'title' && valTd) {
+            valTd.textContent = valTd.textContent.replace(/\s+-\s*$/, '').trim();
+          }
+        });
+      }
+      newMain.append(tbl);
       continue;
     }
     if (child.tagName !== 'DIV') {

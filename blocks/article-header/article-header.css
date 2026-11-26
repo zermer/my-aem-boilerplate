@@ -1,0 +1,53 @@
+.article-header {
+  margin-bottom: 2rem;
+}
+
+.article-header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.article-header-hero {
+  margin: 0 0 1.5rem;
+  line-height: 0;
+}
+
+.article-header-hero picture,
+.article-header-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.article-header-text h1 {
+  font-family: var(--heading-font-family);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  color: var(--text-color);
+}
+
+.article-header-meta {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.article-header-meta time {
+  font-weight: 500;
+}
+
+.article-header-author {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+@media (width >= 900px) {
+  .article-header-inner {
+    padding: 0;
+  }
+}
