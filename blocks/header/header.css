@@ -90,6 +90,7 @@ header nav[aria-expanded='true'] .nav-sections {
 
   header nav .nav-tools p {
     margin: 0;
+    display: contents; /* remove p from flow so <a> participates directly in flex */
   }
 
   header nav .nav-tools a:any-link {
