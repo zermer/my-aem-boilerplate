@@ -6,13 +6,13 @@
 
 .hero {
   position: relative;
-  min-height: 400px;
+  min-height: 480px;
   overflow: hidden;
 }
 
 .hero > div {
   display: grid;
-  min-height: 400px;
+  min-height: 480px;
 }
 
 /* Media cell — background layer */
@@ -31,12 +31,12 @@
   object-fit: cover;
 }
 
-/* Dark gradient overlay */
+/* Dark gradient overlay — strong on left for text legibility, fades right */
 .hero > div > div:first-child::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgb(0 0 0 / 65%) 0%, rgb(0 0 0 / 25%) 60%, rgb(0 0 0 / 0%) 100%);
+  background: linear-gradient(to right, rgb(0 0 0 / 72%) 0%, rgb(0 0 0 / 40%) 45%, rgb(0 0 0 / 0%) 75%);
   z-index: 1;
   pointer-events: none;
 }
@@ -57,11 +57,12 @@
 .hero > div > div:last-child h1,
 .hero > div > div:last-child h2 {
   font-family: var(--heading-font-family);
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
+  line-height: 1.15;
   color: var(--background-color);
   margin: 0 0 16px;
-  text-shadow: 0 1px 4px rgb(0 0 0 / 40%);
+  text-shadow: 0 2px 6px rgb(0 0 0 / 50%);
 }
 
 .hero > div > div:last-child p {
@@ -150,7 +151,7 @@
 @media (width >= 600px) {
   .hero,
   .hero > div {
-    min-height: 480px;
+    min-height: 37.5rem; /* 600px — matches original tablet height */
   }
 
   .hero > div > div:last-child h1,
@@ -162,16 +163,23 @@
 @media (width >= 900px) {
   .hero,
   .hero > div {
-    min-height: 600px;
+    min-height: clamp(44.375rem, 75vh, 56.25rem); /* 710px–900px, matches original lg height */
   }
 
   .hero > div > div:last-child {
     padding: 80px 60px;
-    max-width: 55%;
+    max-width: 52%;
   }
 
   .hero > div > div:last-child h1,
   .hero > div > div:last-child h2 {
-    font-size: 3rem;
+    font-size: clamp(2.75rem, 4vw, 3.75rem);
+    line-height: 1.1;
+    margin: 0 0 20px;
+  }
+
+  .hero > div > div:last-child p {
+    font-size: 1.25rem;
+    max-width: 480px;
   }
 }
